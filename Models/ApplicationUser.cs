@@ -13,5 +13,7 @@ namespace AjaxMvc.Models
         public required DateOnly BirthDate { get; set; }
 
         public ICollection<ApplicationUserRole> ApplicationUserRole { get; set; }
+
+        public ICollection<Student> Students { get; set; }
     }
 }

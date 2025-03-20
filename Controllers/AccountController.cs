@@ -44,6 +44,20 @@ namespace AjaxMvc.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Login(LoginViewModel login)
+        {
+            var user = await _userManager.FindByEmailAsync(login.EmailAdress);
+            
+            return View();
+        }
 
         public IActionResult Index()
         {

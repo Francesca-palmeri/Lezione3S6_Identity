@@ -23,5 +23,10 @@ namespace AjaxMvc.Models {
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+
+        public string UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public ApplicationUser User { get; set; }
     }
 }

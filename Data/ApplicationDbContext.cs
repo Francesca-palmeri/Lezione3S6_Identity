@@ -31,6 +31,8 @@ namespace AjaxMvc.Data {
             modelBuilder.Entity<ApplicationUserRole>().HasOne(ur => ur.User).WithMany(u => u.ApplicationUserRole).HasForeignKey(ur => ur.UserId).IsRequired();
 
             modelBuilder.Entity<ApplicationUserRole>().HasOne(ur => ur.Role).WithMany(r => r.ApplicationUserRole).HasForeignKey(ur => ur.RoleId).IsRequired();
+
+           modelBuilder.Entity<Student>().HasOne(s => s.User).WithMany(u => u.Students).HasForeignKey(s => s.UserId);
         }
 
     }
